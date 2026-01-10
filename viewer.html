@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .info-panel {
+      background: #e9ecef;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .info-panel p {
+      margin: 5px 0;
+    }
+    .chart-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    #chartCanvas {
+      border: 1px solid #ccc;
+      background-color: #fff;
+      display: block;
+    }
+    .controls {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button.download {
+      background-color: #28a745;
+    }
+    button.download:hover {
+      background-color: #218838;
+    }
+    button.reset {
+      background-color: #6c757d;
+    }
+    button.reset:hover {
+      background-color: #5a6268;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .data-table th {
+      background-color: #f2f2f2;
+    }
+    .status {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .info {
+      background-color: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>耳机频率响应数据查看器</h1>
+    
+    <div id="status" class="status info">
+      正在加载数据...
+    </div>
+    
+    <div id="infoPanel" class="info-panel hidden">
+      <p><strong>产品名称:</strong> <span id="productName"></span></p>
+      <p><strong>文件名称:</strong> <span id="filename"></span></p>
+      <p><strong>声道:</strong> <span id="channel"></span></p>
+      <p><strong>数据点数量:</strong> <span id="dataPoints"></span></p>
+      <p><strong>偏置值:</strong> <span id="bias"></span> dB</p>
+      <p><strong>频率范围:</strong> <span id="freqRange"></span> Hz</p>
+      <p><strong>幅度范围:</strong> <span id="ampRange"></span> dB</p>
+    </div>
+    
+    <div class="controls">
+      <button id="downloadBtn" class="download">下载 CSV 文件</button>
+      <button id="resetViewBtn" class="reset">重置视图</button>
+      <button id="toggleTableBtn">显示/隐藏数据表格</button>
+    </div>
+    
+    <div class="chart-container">
+      <canvas id="chartCanvas" width="1280" height="800"></canvas>
+    </div>
+    
+    <div id="tableContainer" class="hidden">
+      <h3>数据表格</h3>
+      <table id="dataTable" class="data-table">
+        <thead>
+          <tr>
+            <th>频率 (Hz)</th>
+            <th>幅度 (dB)</th>
+            <th>调整后幅度 (dB)</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="viewer.js"></script>
+</body>
+</html>

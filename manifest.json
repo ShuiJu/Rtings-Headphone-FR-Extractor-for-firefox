@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Rtings Headphone Data Extractor",
+  "version": "1.0",
+  "description": "Extract frequency response data from Rtings.com headphone graphs",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "downloads",
+    "storage",
+    "*://*.rtings.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.rtings.com/headphones/graph/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rtings-data-extractor@example.com",
+      "data_collection_permissions": {
+        "description": "This extension does not collect any personal or usage data. It only extracts frequency response data from Rtings.com graphs for local processing and download. No data is transmitted to external servers.",
+        "data": [],
+        "required": ["none"]
+      }
+    }
+  }
+}
