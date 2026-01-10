@@ -444,9 +444,9 @@ function testExtractData() {
   }
 }
 
-// 页面加载完成后添加调试按钮
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', addDebugButton);
-} else {
-  addDebugButton();
-}
+// // 页面加载完成后添加调试按钮
+// if (document.readyState === 'loading') {
+//   document.addEventListener('DOMContentLoaded', addDebugButton);
+// } else {
+//   addDebugButton();
+// }
