@@ -214,7 +214,7 @@ function updateInfoPanel() {
     ctx.textAlign = 'center';
     ctx.fillText('频率 (Hz)', padding.left + chartWidth / 2, padding.top + chartHeight + 40);
     ctx.save();
-    ctx.translate(padding.left - 40, padding.top + chartHeight / 2);
+    ctx.translate(padding.left - 50, padding.top + chartHeight / 2);
     ctx.rotate(-Math.PI / 2);
     ctx.fillText('幅度 (dB)', 0, 0);
     ctx.restore();
