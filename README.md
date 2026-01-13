@@ -14,7 +14,7 @@ A Firefox browser extension that extracts frequency response data from Rtings.co
 
 ### 📦 Installation From Firefox Add-ons Store
 
-#### (Coming soon) 
+#### https://addons.mozilla.org/zh-CN/firefox/addon/rtings-headphone-fr-extractor/
 
 #### Manual Installation (Developer Mode)
 
