@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Rtings Headphone Data Extractor",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Extract frequency response data from Rtings.com headphone graphs",
   "permissions": [
     "activeTab",
